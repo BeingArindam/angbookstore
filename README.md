@@ -3,7 +3,8 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.5.
 
 ## Steps
--npm install
+* npm install
+* git remote add origin https://github.com/BeingArindam/angbookstore.git
 
 ## Development server
 

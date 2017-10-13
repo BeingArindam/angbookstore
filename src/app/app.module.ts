@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { BooklistComponent } from './booklist/booklist.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -10,7 +11,11 @@ import { BooklistComponent } from './booklist/booklist.component';
     BooklistComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot([
+      { path: '', component: AppComponent },
+      { path: 'booklist', component: BooklistComponent }
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
