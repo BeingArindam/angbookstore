@@ -5,6 +5,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Steps
 * npm install
 * git remote add origin https://github.com/BeingArindam/angbookstore.git
+* git push -u origin
+* "Access-Control-Allow-Origin", "*" header added to rest service. jaxrs2.
 
 ## Development server
 

@@ -1,7 +1,17 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!
-  </h1>
-  <router-outlet></router-outlet>
-</div>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+  crossorigin="anonymous">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12" style="text-align: center">
+        <div class="jumbotron">
+          <h1>Welcome to {{title}}!</h1>
+        </div>
+      </div>
+      <div class="col-sm-3"></div>
+      <div class="col-sm-9">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+
+  </div>

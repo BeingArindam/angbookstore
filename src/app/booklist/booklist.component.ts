@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Ibook} from './ibook';
+import { Ibook } from './ibook';
+import { Response } from '@angular/http';
+import { Observable } from 'rxjs';
+import { BooksService } from '../service/books.service'
 
 @Component({
   selector: 'app-booklist',
@@ -7,49 +10,13 @@ import {Ibook} from './ibook';
   styleUrls: ['./booklist.component.css']
 })
 export class BooklistComponent implements OnInit {
-  books:Ibook[];
-  constructor() { }
+  books: Ibook[];
+  filterKey = "";
+  constructor(private bookService: BooksService) { }
 
   ngOnInit() {
-  this.books = [
-    {
-        "isbn": "978143022757",
-        "name": "Pro Python",
-        "author": "Marty Alchin",
-        "publisher": "Apress",
-        "price": 18.45,
-        "url": "http://www.bookstore.com/propython",
-        "releaseDate": 1507366745900
-    },
-    {
-        "isbn": "1298549383376",
-        "name": "Java Persistence API",
-        "author": "Gavin King",
-        "publisher": "Manning",
-        "price": 23.45,
-        "url": "http://www.bookstore.com/jpa",
-        "releaseDate": 1507366745900
-    },
-    {
-        "isbn": "978144930535",
-        "name": "Jenkins: The Definitive Guide",
-        "author": "John Ferguson Smart",
-        "publisher": "O'Reilly",
-        "price": 31.95,
-        "url": "http://www.bookstore.com/jenkins",
-        "releaseDate": 1507366745900
-    },
-    {
-        "isbn": "312854438653",
-        "name": "Spring Franework",
-        "author": "Rod Johnson",
-        "publisher": "McGraw Hill",
-        "price": 32.95,
-        "url": "http://www.bookstore.com/sf",
-        "releaseDate": 1507366745900
-    }
-]
-
+    this.bookService.getAllBooks().subscribe(data => {
+    this.books = data;
+    });
   }
-
 }

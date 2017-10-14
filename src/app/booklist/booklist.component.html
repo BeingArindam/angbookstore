@@ -1,8 +1,21 @@
-<p>
-  booklist works!
-</p>
-<ul>
-  <li *ngFor="let book of books">
-    {{book.name}}
-  </li>
-</ul>
+Search: <input [(ngModel)]="filterKey" type="search" placeholder="Search text goes here"/>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>ISBN</th>
+      <th>Publisers</th>
+      <th>Price</th>
+      <th>Author</th>
+      <th>Release Date</th>
+    </tr>
+  </thead>
+  <tr *ngFor="let book of books | filter: filterKey">
+    <td>{{book.name}}</td>
+    <td>{{book.isbn}}</td>
+    <td>{{book.publisher}}</td>
+    <td>{{book.price | currency: 'USD':true}}</td>
+    <td>{{book.author}}</td>
+    <td>{{book.releaseDate | date:'medium'}}</td>
+  </tr>
+</table>
